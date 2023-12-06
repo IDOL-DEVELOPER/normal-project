@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        font-size: 100px;
+        padding: 5px;
+        animation: blink linear 2s infinite;
+
+    }
+
+    p:nth-child(1) {
+
+        color: yellow;
+
+        -webkit-text-stroke: 2px red;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 3px;
+        text-transform: capitalize;
+        text-decoration: double;
+    }
+
+    @keyframes blink {
+        10% {
+            -webkit-text-stroke: 2px green;
+            -webkit-text-stroke-width: 5px;
+            text-shadow: 0px 66px 6px yellow,
+
+        }
+
+        20% {
+            -webkit-text-stroke-width: -3px;
+            -webkit-text-stroke: 2px blue;
+
+            text-shadow: 0 60px 6px red;
+
+
+        }
+
+        50% {
+            -webkit-text-stroke-width: -5px;
+            -webkit-text-stroke: 2px rgb(214, 128, 31);
+            text-shadow:
+                0 60px 6px blue;
+        }
+
+        70% {
+            -webkit-text-stroke-width: 6px;
+            -webkit-text-stroke: 2px goldenrod;
+            text-shadow:
+                0 60px 6px violet;
+        }
+
+        100% {
+            -webkit-text-stroke-width: -6px;
+            -webkit-text-stroke: 2px aqua;
+        }
+    }
+</style>
+
+<body>
+    <p>
+        Hello javascript
+    </p>
+</body>
+
+</html>

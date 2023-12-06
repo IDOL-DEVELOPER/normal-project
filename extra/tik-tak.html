@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 10% auto;
+            height: 300px;
+            display: grid;
+            justify-content: center;
+
+        }
+
+        .col-4 {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            border: 2px solid white;
+            border-radius: 10px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .flex {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<input type="text" id="num1">
+<input type="text" id="num2">
+<input type="button" value="check" onclick="check()">
+
+    <div class="container">
+        <div class="flex">
+            <div class="col-4" id="tik1" onclick="tik('tik1')"></div>
+            <div class="col-4" id="tik2" onclick="tik('tik2')"></div>
+            <div class="col-4" id="tik3" onclick="tik('tik3')"></div>
+        </div>
+        <div class="flex">
+            <div class="col-4" id="tik4" onclick="tik('tik4')"></div>
+            <div class="col-4" id="tik5" onclick="tik('tik5')"></div>
+            <div class="col-4" id="tik6" onclick="tik('tik6')"></div>
+        </div>
+        <div class="flex">
+            <div class="col-4" id="tik7" onclick="tik('tik7')"></div>
+            <div class="col-4" id="tik8" onclick="tik('tik8')"></div>
+            <div class="col-4" id="tik9" onclick="tik('tik9')"></div>
+        </div>
+    </div>
+</body>
+<script>
+    let seek = "x";
+    function tik(s) {
+        if (seek == "x") {
+            if (document.getElementById(s).innerHTML == "") {
+                document.getElementById(s).innerHTML = seek;
+                seek = "0";
+            }
+        }
+        else {
+            if (document.getElementById(s).innerHTML == "") {
+                document.getElementById(s).innerHTML = seek;
+                seek = "x";
+            }
+        }
+    }
+
+    function check(){
+let a,b,c;
+a=parseInt(document.getElementById("num1").value);
+b=parseInt(document.getElementById("num2").value);
+if(a>b){
+    alert(a);
+}
+else{
+    alert(b);
+}
+}
+
+</script>
+
+</html>

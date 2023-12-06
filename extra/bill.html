@@ -1,0 +1,26 @@
+<input type="text" id="hour">
+<input type="button" value="check " onclick="check()">
+<script>
+    let h,w;
+    function check(){
+        h = document.getElementById("hour").value;
+        if(h<=4){
+            w=h*10;
+        
+        }else if(h>4 && h<=7){
+            w=(h-4)*20+40;
+        
+        }else if(h>7 && h<=9){
+            w=(h-7)*30+100;
+            
+        }
+        else{
+            w=(h-9)*45+160;
+
+        }
+alert(w);
+
+
+        
+    }
+</script>

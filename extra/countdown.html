@@ -1,0 +1,27 @@
+<input type="text" id="num">
+<input type="button" value="save" onclick="check()">
+<p id="result"></p>
+<p id="result1"></p>
+<script>
+    function check() {
+        let a = document.getElementById("num").value;
+        let b = new Date();
+        let d = document.getElementById("result").innerHTML = b.getMinutes() + parseInt(a);
+        let c = setInterval(function () {
+            let e = d - new Date().getMinutes();
+            const f = new Date().getSeconds() - "60";
+            document.getElementById("result1").innerHTML = "<br>" + e + "mintues" + f * (-1) + "seconds";
+            if (e <= 0) {
+                clearInterval(c);
+                document.getElementById("result1").innerHTML = "EXPIRED";
+                document.getElementById("result").innerHTML = "Your Time Reset";
+
+            }
+
+
+
+        }, 1000
+        );
+
+    }
+</script>

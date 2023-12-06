@@ -1,0 +1,14 @@
+<input type="text" id="str">
+<input type="button" value="check" onclick="check()">
+<p id="data"></p>
+<script>
+   
+    function check(){
+        let arr=["no name","num",1234567890];
+    let d=document.getElementById("str").value;
+    arr[0]=d;
+        document.getElementById("data").innerHTML=arr[0] + "<br>" + arr[1];
+        console.log(arr[0]);
+    }
+
+</script>

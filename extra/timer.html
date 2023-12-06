@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            width: 50%;
+            height: 100%;
+            margin: 50px auto;
+            background-color: rgba(150, 150, 150, 0.05);
+            display: grid;
+            justify-content: center;
+            box-shadow: 0.5px 0.5px 10px lightblue;
+        }
+
+        input {
+            width: 200px;
+            padding: 5px;
+            height: 40px;
+            margin: 20px;
+            font-size: 14px;
+            background-color: aliceblue;
+            background-color: bisque;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            /* position: absolute; */
+        }
+
+
+        .count {
+            padding: 2%;
+            background-color: rgba(3, 138, 255, 0.50);
+            font-size: 50px;
+            margin: auto;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+
+
+        }
+
+        .ab {
+            position: absolute;
+            background-color: rgb(242, 166, 25);
+            width: 400px !important;
+        }
+
+        .flex {
+            display: flex;
+            width: 50%;
+            margin: 20px auto;
+
+
+
+
+        }
+
+        .center-text {
+            text-align: center;
+            padding: 5px;
+        }
+        </style>
+
+<script>
+    let aa, a, b, res = 0, resm = 0, resx = 0;
+    let dtime = 0;
+    
+    function dd() {
+
+            // let dtime = parseInt(document.getElementById("mint").value);
+            let ds = dtime * 60;
+            aa = setInterval(function () {
+                let m = Math.floor(ds / 60);
+                let x = ds % 60;
+                resm = m;
+                resx = x;
+
+                a = document.getElementById("countDown").innerHTML = ((m <= 9) ? "0" + m : m) + ":" + ((x <= 9) ? "0" + x : x);
+                ds++;
+                document.getElementById("start").disabled = true;
+                document.getElementById("pause").disabled = false;
+                document.getElementById("reset").disabled = false;
+                // document.getElementById("pause").style.display = "block";
+                // document.getElementById("resume").style.display = "none";
+
+                // if (m == 0 && x == 0) {
+                //     clearInterval(aa);
+                //     document.getElementById("countDown").innerHTML = "00:00<br>EXPIRED";
+                // }
+            }, 1000);
+
+            // function actualTimer() {
+
+            //     let m = Math.floor(ds / 60);
+            //     let x = ds % 60;
+            //     document.getElementById("countDown").innerHTML = m + ":" + x;
+            //     ds--;
+            // }
+        }
+
+        function resume() {
+            let dtime = resm;
+            let ds = (dtime * 60) + resx;
+            aa = setInterval(function () {
+                let m = Math.floor(ds / 60);
+                let x = ds % 60;
+                resm = m;
+                resx = x;
+                a = document.getElementById("countDown").innerHTML = ((m <= 9) ? "0" + m : m) + ":" + ((x <= 9) ? "0" + x : x);
+
+                ds++;
+
+            }, 1000);
+            document.getElementById("pause").style.display = "block";
+            document.getElementById("resume").style.display = "none";
+
+        }
+        function stop() {
+            clearInterval(aa);
+            // b = document.getElementById("countDown1").innerHTML = a;
+            document.getElementById("pause").style.display = "none";
+            document.getElementById("resume").style.display = "block";
+        }
+        function reset() {
+            clearInterval(aa);
+          document.getElementById("countDown").innerHTML="00:00";
+          document.getElementById("start").disabled=false;
+          document.getElementById("pause").disabled=true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="center-text">StopWatch</h4>
+        <div class="flex">
+            <input type="button" id="start" value="Start" onclick="dd()"
+                style="background-color: greenyellow;font-size: 20px;">
+            <input type="button" id="resume" value="Resume" onclick="resume()" style="background-color:yellow
+                ;font-size: 20px; display: none;">
+            <input type="button" id="pause" value="Pause" onclick="stop()"
+                style="background-color: blue;font-size: 20px;" disabled>
+            <input type="reset" id="Reset" value="Reset" onclick="reset()"
+                style="background-color:red;font-size: 20px;">
+        </div>
+        <div class="flex">
+            <span id="countDown" class="count">00:00</span>
+
+        </div>
+        <!-- <div class="flex">
+            <span id="countDown1" class="count">00:00</span>
+
+        </div> -->
+
+
+    </div>
+
+</body>
+
+</html>

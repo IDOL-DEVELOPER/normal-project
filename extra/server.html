@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTASERVER DATA CENTER</title>
+ 
+  <link href="server.css" rel="stylesheet">
+ 
+</head>
+
+
+<body>
+  
+ 
+ 
+  
+    <div class="status">
+
+        <h3> [ SERVER RUNTIME STATUS ]</h3>
+        <hr> <br>
+        <div class="uptime">
+            <div class="greens systm"></div> <br>
+            <P style="margin-left: 1%;color: rgb(24, 248, 24);font-family: 'Roboto', sans-serif;">RUNNING</P> <br>
+            <div class="oranges systm"></div> <br>
+            <P style="margin-left: 1%;color: orange;font-family: 'Roboto', sans-serif;">OVERLOAD</P> <br>
+            <div class="reds systm"></div>
+            <P style="margin-left: 1%;color: red;font-family: 'Roboto', sans-serif;margin-right:10px;">DOWN</P>
+        </div>
+
+<div id="clock">8:10:45</div>
+  
+    </div>
+    <div class="container">
+
+
+  
+
+
+        <div class="datacenter">
+            <h4>>>DATA CENTER<< </h4>
+        </div>
+
+        <div class="server">
+            <div class="grid">
+                <div class="white" >...</div>
+                <div class="white" >...</div>
+                <div class="white" >...</div>
+            </div>
+            <div class="grid">
+                <div class="green 1" ></div>
+                <div class="green 1" ></div>
+                <div class="green 1" ></div>
+            </div>
+            <p>SERVER-1 >></p>
+            <p style="color: green;">RUNNING</p>
+            
+        </div>
+        <div class="server">
+            <div class="grid">
+                <div class="white">...</div>
+                <div class="white">...</div>
+                <div class="white">...</div>
+            </div>
+            <div class="grid">
+                <div class="green 2" ></div>
+                <div class="green 2" ></div>
+                <div class="green 2" ></div>
+            </div>
+            <p>SERVER-2 >></p>
+            <p style="color: green;">RUNNING</p>
+            
+        </div>
+
+        <div class="server">
+            <div class="grid">
+                <div class="white">...</div>
+                <div class="white">...</div>
+                <div class="white">...</div>
+            </div>
+            <div class="grid">
+                <div class="green 3"></div>
+                <div class="green 3"></div>
+                <div class="green 3"></div>
+            </div>
+            <p>SERVER-3 >></p>
+            <p style="color: green;">RUNNING</p>
+            
+        </div>
+        <div class="server">
+            <div class="grid">
+                <div class="white">...</div>
+                <div class="white">...</div>
+                <div class="white">...</div>
+            </div>
+            <div class="grid">
+                <div class=" green orange 4" ></div>
+                <div class="green orange 4" ></div>
+                <div class=" green orange 4" ></div>
+            </div>
+            <p>SERVER-4 >></p>
+            <p style="color: orange;">OVERLOAD</p>
+           
+        </div>  
+        
+        <div class="server">
+            <div class="grid">
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="button"><a href="">Go Back</a> </div>
+    
+     
+   
+    
+ 
+
+    <!-- <input type="text" name="" class="num">
+    <input type="button" value="check" onclick="doaction()">
+
+    <select name="" id="val" class="val">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select> -->
+
+</body>
+ <script>setInterval(showTime, 1000);
+function showTime() {
+    let time = new Date();
+    let hour = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    am_pm = "AM";
+  
+    if (hour > 12) {
+        hour -= 12;
+        am_pm = "PM";
+    }
+    if (hour == 0) {
+        hr = 12;
+        am_pm = "AM";
+    }
+  
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+  
+    let currentTime = hour + ":" 
+            + min + ":" + sec + am_pm;
+  
+    document.getElementById("clock")
+            .innerHTML = currentTime;
+}
+showTime();
+
+</script>
+
+
+
+</html>
+
+ 

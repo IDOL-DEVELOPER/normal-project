@@ -1,0 +1,30 @@
+<input type="button" value="save" onclick="check()">
+<p id="result"></p>
+<p id="result1"></p>
+<script>
+    function check() {
+        let b = new Date();
+
+
+        b.setMinutes(1);
+        b.setSeconds(59);
+
+        let c = setInterval(function () {
+
+            let h = b.getSeconds() - new Date().getSeconds();
+            document.getElementById("result1").innerHTML = b.getMinutes() + "mintues" + b.getSeconds() + "seconds";
+            document.getElementById("result").innerHTML = h;
+            if (e <= 0) {
+                clearInterval(c);
+                document.getElementById("result1").innerHTML = "EXPIRED";
+                document.getElementById("result").innerHTML = "Your Time Reset";
+
+            }
+
+
+
+        }, 10
+        );
+
+    }
+</script>

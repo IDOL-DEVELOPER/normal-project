@@ -1,0 +1,25 @@
+<input type="text" id="num">
+<input type="button" value="check" onclick="check()">
+
+
+<p id="cube"></p>
+
+
+<script>
+    function check() {
+        document.getElementById("cube").innerHTML = "";
+        let b = document.getElementById("num").value;
+        let i = 1;
+        while (i <= b) {
+            if (i % 2 == 0) {
+                document.getElementById("cube").innerHTML += i * i + "<br>";
+                console.log(i);
+            }
+            else {
+                document.getElementById("cube").innerHTML += i * i * i + "<br>";
+            }
+            i++;
+        }
+
+    }
+</script>

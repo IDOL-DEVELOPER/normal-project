@@ -1,0 +1,24 @@
+<input type="text" id="discount">
+<input type="button" value="discount" onclick="check()">
+
+<script>
+    let dis, pur;
+    function check() {
+        dis = document.getElementById("discount").value;
+
+        if (dis > 25000) {
+            pur = (dis * 20) / 100;
+            alert(pur);
+        } else {
+            if (dis > 15000 && dis <= 25000) {
+                pur = (dis * 12) / 100;
+                alert(pur);
+            } else {
+                pur = (dis * 7) / 100;
+                alert(pur);
+            }
+        }
+
+    }
+
+</script>

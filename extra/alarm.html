@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Setup</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .container {
+        width: 50%;
+        height: 100%;
+        margin: 20px auto;
+        background-color: rgba(250, 250, 250, 0.15);
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    input {
+        width: 200px;
+        padding: 3px;
+        font-size: 14px;
+        margin: 20px;
+        cursor: pointer;
+    }
+
+    .set-button {
+        background-color: greenyellow;
+        font: bold;
+        width: 150px;
+        margin: 20px;
+        border: none;
+        outline: none;
+    }
+
+    #show {
+        width: 90%;
+        padding: 5px;
+        background-color: rgba(250, 250, 250, 0.15);
+        color: white;
+        font: bold;
+    }
+
+    #show1 {
+        width: 90%;
+        padding: 5px;
+        background-color: rgba(250, 250, 250, 0.15);
+        color: white;
+        font: bold;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <input type="date" id="date">
+            <input type="time" id="time">
+        </div>
+        <input type="button" value="Set Alarm" class="set-button" onclick="set()">
+        <input type="button" value="Stop" onclick="Stop()" style="background-color:red;" class="set-button">
+        <p id="show"></p>
+        <p id="show1"></p>
+    </div>
+    <script>
+        let lt, lt1, dt, dt1, ddate, ttime, interv;
+        let beat = new Audio('my.mp3');
+        let mt = new Date();
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat"];
+        const month = ["January", "February", "March", "April", "May", "June", "Jul", "August", "September", "October", "November", "December"];
+        let a = weekday[mt.getDay()];
+        let b = month[mt.getMonth()];
+        let c = mt.getDate();
+        let d = mt.getFullYear();
+        let e = mt.getTimezoneOffset();
+
+        function set() {
+            ddate = document.getElementById("date").value;
+            ttime = document.getElementById("time").value;
+            lt = new Date(ddate + " " + ttime)
+            if (ddate == "") {
+                alert("please Select A Date");
+
+            } else {
+                datashow = document.getElementById("show").innerHTML = lt;
+            }
+
+            interv = setInterval(function () {
+                dt = new Date();
+                // dt1 = weekday[dt.getDay()] + " " + month[dt.getMonth()] + " " + dt.getDate() + " " + dt.getFullYear() + " " + dt.getHours() + ":" + dt.getMinutes();
+                // let dtime = userinp;
+                // let ds = dtime * 60;
+                // let m = Math.floor(ds / 60);
+                // let x = ds % 60;
+                document.getElementById("show1").innerHTML = dt;
+
+                if (dt >= lt) {
+
+                    beat.play();
+                    clearInterval(interv);
+                }
+            }, 1000);
+        }
+        function Stop() {
+            clearInterval(interv);
+            beat.pause();
+            beat.currentTime = 0;
+            document.getElementById("show").innerHTML = "time up up";
+
+        }
+
+    </script>
+</body>
+
+</html>

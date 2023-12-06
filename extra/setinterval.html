@@ -1,0 +1,11 @@
+<p id="result"></p>
+<script>
+    let a;
+    a = 10;
+    let c = setInterval(function () {
+        while (a != 0) {
+            document.getElementById("result").innerHTML += " " + a;
+            a--;
+        }
+    }, 1000);
+</script>

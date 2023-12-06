@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+</head>
+<style>
+    .container {
+        width: 390px;
+        height: 396px;
+        position: relative;
+        margin: 100px auto;
+        border-radius: 10px;
+    }
+
+    .col-12 {
+        width: 100%;
+        position: absolute;
+        border-radius: 10px;
+        transition: 2s linear;
+
+    }
+
+    .col-12 img {
+        border-radius: 10px;
+        transition: 2s ease-in-out;
+        transform: rotate3d(70deg);
+
+    }
+
+    .btn {
+        width: 100px;
+        height: 50px;
+        font-size: 14px;
+        padding: 5px;
+        background: linear-gradient(to right, red 50%, green 50%);
+        border: none;
+        outline: none;
+        position: relative;
+        left: 50%;
+        color: white;
+        cursor: pointer;
+
+    }
+
+    @keyframes run {
+        10% {
+            rotate: 30deg;
+            transform: rotate3d(70deg);
+        }
+
+        20% {
+            rotate: 45deg;
+            transform: rotate3d(67deg);
+        }
+
+        50% {
+            rotate: -90deg;
+            transform: rotate3d(90deg);
+        }
+
+        70% {
+            rotate: -30deg;
+            transform: rotate3d(-70deg);
+        }
+
+        80% {
+            rotate: 60deg;
+            transform: rotate3d(106deg);
+        }
+
+        100% {
+            rotate: 90deg;
+            transform: rotate3d(180deg);
+        }
+    }
+
+    /* .btn:hover{
+        background:linear-gradient(to left, red 50%,green 50%);
+        transition: 5s ease-in-out;
+    } */
+</style>
+
+<body>
+    <div id="gst"></div>
+    <div class="container">
+        <div class="col-12" id="1" style="display: block;">
+
+            <img src="../img/1.png" alt="">
+        </div>
+        <div class="col-12" id="2">
+
+            <img src="../img/2.png" alt="">
+
+        </div>
+
+        <div class="col-12" id="3">
+            <img src="../img/3.png" alt="">
+
+
+        </div>
+
+        <div class="col-12" id="4">
+
+            <img src="../img/4.png" alt="">
+
+        </div>
+
+        <div class="col-12" id="5">
+
+            <img src="../img/5.png" alt="">
+
+        </div>
+
+        <div class="col-12" id="6">
+            <img src="../img/6.png" alt="">
+
+        </div>
+
+    </div>
+    <input type="button" value="Roll" id="btn" onclick="dice()" class="btn">
+    <input type="text" id="check" onchange="change()">
+    <button onclick="myFunction()">Go Back</button>
+
+<script>
+function myFunction() {
+  window.history.back();
+}
+</script>
+</body>
+<script>
+    let a, b;
+    function dice() {
+        let ht = 0;
+        let dt = 5;
+        let interv = setInterval(function () {
+            document.getElementById("1").style.display = "block";
+            document.getElementById("6").style.display = "none";
+            document.getElementById("5").style.display = "none";
+            document.getElementById("4").style.display = "none";
+            document.getElementById("3").style.display = "none";
+            document.getElementById("2").style.display = "none";
+            document.getElementById("btn").style.background = "linear-gradient(to top, red 50%,green 50%)";
+            // for (i = 1; i <= 5; i++) {
+            let a = Math.floor(Math.random() * 6) + 1;
+            let b = document.getElementById("check").value = parseInt(a);
+            document.getElementById(b).style.display = "block";
+            document.getElementById(b).style.animation = "run 0.15s linear";
+            ht++;   
+
+            // }
+            if (ht == dt) {
+                clearInterval(interv);
+
+            }
+        }, 150);
+
+    }
+    // switch (b) {
+        //     case 1:
+        //         document.getElementById(b).style.display = "block";
+        //         document.getElementById("6").style.display = "none";
+        //         document.getElementById("2").style.display = "none";
+        //         document.getElementById("3").style.display = "none";
+        //         document.getElementById("4").style.display = "none";
+        //         document.getElementById("5").style.display = "none";
+        //         document.getElementById(b).style.transition = "3s linear";
+        //         document.getElementById(b).style.transform = "rotate(86deg)";
+        //         document.getElementById(b).style.rotate = "90deg";
+        //         document.getElementById("btn").style.background = "linear-gradient(to left, grey 50%,green 50%)";
+        //         break;
+        //     case 2:
+        //         document.getElementById(b).style.display = "block";
+        //         document.getElementById("6").style.display = "none";
+        //         document.getElementById("3").style.display = "none";
+        //         document.getElementById("1").style.display = "none";
+        //         document.getElementById("4").style.display = "none";
+        //         document.getElementById("5").style.display = "none";
+        //         document.getElementById(b).style.transition = "3s linear";
+        //         document.getElementById(b).style.transform = "rotate(80deg)";
+        //         document.getElementById(b).style.rotate = "90deg";
+        //         document.getElementById("btn").style.background = "linear-gradient(to left, red 50%,grey 50%)";
+        //         break;
+        //     case 3:
+        //         document.getElementById(b).style.display = "block";
+        //         document.getElementById("6").style.display = "none";
+        //         document.getElementById("4").style.display = "none";
+        //         document.getElementById("5").style.display = "none";
+        //         document.getElementById("2").style.display = "none";
+        //         document.getElementById("1").style.display = "none";
+        //         document.getElementById(b).style.transform = "rotate(30deg)";
+        //         document.getElementById(b).syle.transition = "3s linear";
+        //         document.getElementById(b).style.rotate = "90deg";
+        //         document.getElementById("btn").style.background = "linear-gradient(to left, grey 50%,red 50%)";
+        //         break;
+        //     case 4:
+        //         document.getElementById(b).style.display = "block";
+        //         document.getElementById("6").style.display = "none";
+        //         document.getElementById("5").style.display = "none";
+        //         document.getElementById("3").style.display = "none";
+        //         document.getElementById("2").style.display = "none";
+        //         document.getElementById("1").style.display = "none";
+        //         document.getElementById(b).style.transform = "rotate(40deg)";
+        //         document.getElementById(b).style.transition = "3s linear";
+
+        //         document.getElementById(b).style.rotate = "90deg";
+        //         document.getElementById("btn").style.background = "linear-gradient(to left, black 50%,green 50%)";
+        //         break;
+        //     case 5:
+        //         document.getElementById(b).style.display = "block";
+        //         document.getElementById("6").style.display = "none";
+        //         document.getElementById("4").style.display = "none";
+        //         document.getElementById("3").style.display = "none";
+        //         document.getElementById("2").style.display = "none";
+        //         document.getElementById("1").style.display = "none";
+        //         document.getElementById(b).style.transition = "3s linear";
+        //         document.getElementById(b).style.transform = "rotate(50deg)";
+        //         document.getElementById(b).style.rotate = "90deg";
+        //         document.getElementById("btn").style.background = "linear-gradient(to left, red 50%,black 50%)";
+        //         break;
+
+
+        // }
+
+
+
+
+</script>
+
+</html>

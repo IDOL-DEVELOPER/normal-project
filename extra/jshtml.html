@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .contianer {
+        background-color: rgb(77, 174, 206);
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    button {
+        width: 70px;
+        margin: 10px;
+
+    }
+
+    .flex {
+        margin: 20px;
+        background-color: azure;
+    }
+</style>
+
+<body>
+    <input type="number" id="one">
+    <input type="number" id="two">
+
+    <input type="text" id="result">
+
+    <button onclick="cal()">Result</button>
+
+    <div class="container">
+        <button id="sum" value="+" onclick="enn('+')">+</button>
+        <button id="less" value="-" onclick="enn('-')">-</button>
+    </div>
+
+    <div class="container " id="conn">
+        <div class="flex">
+            <button id="1" value="1" onclick="enn(1)">1</button>
+            <button id="2" value="2" onclick="enn(2)">2</button>
+            <button id="3" value="3" onclick="enn(3)">3</button>
+        </div>
+        <div class="flex">
+            <button id="4" value="4" onclick="enn(4)">4</button>
+            <button id="5" value="5" onclick="enn(5)">5</button>
+            <button id="6" value="6" onclick="enn(6)">6</button>
+        </div>
+        <div class="flex">
+            <button id="7" value="7" onclick="enn(7)">7</button>
+            <button id="8" value="8" onclick="enn(8)">8</button>
+            <button id="9" value="9" onclick="enn(9)">8</button>
+        </div>
+
+
+    </div>
+
+</body>
+<script>
+    function enn(s) {
+        if (isNaN(s)) {
+            document.getElementById("result").value+=s;
+        }
+        else {
+            document.getElementById("result").value+= parseInt(s);
+        }
+    
+
+    }
+    function cal() {
+
+        let a = document.getElementById("one").value;
+        let b = document.getElementById("two").value;
+        let c = parseInt(a);
+        let d = parseInt(b);
+        let e = c + d;
+        let f = document.getElementById("sum").value;
+        let g = document.getElementById("less").value;
+        let h = document.getElementById("result").value =i;
+    } 
+</script>
+
+</html>

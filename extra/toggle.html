@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+</head>
+<style>
+    .container{
+background-color: red;
+width: 50px;
+height: 20px;
+border-radius: 23PX;
+position: relative;
+display: flex;
+align-items: center;
+}
+.move{
+    background-color: pink;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(0);
+    transition: 2s linear;
+
+}
+#lbchk{
+    transition: 2s  linear;
+}
+#check{
+    transition: 2s linear;
+}
+#check:checked~#lbchk .move{
+    left: 30px;
+    background-color: blue;
+    transition: 2s linear; 
+    font
+}
+
+</style>
+<body>
+
+    <input type="checkbox" name="" id="check">
+    <label for="check" id="lbchk"> 
+    <div class="container">
+        <div class="move" id="move">
+            
+        </div>
+    </div>
+
+    </label>
+</body>
+</html>

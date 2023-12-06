@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <style>
+        .bb
+        {
+            height: 80px;
+            width: 80px;
+            border: 6px solid ;
+            border-image-source: linear-gradient(to bottom, red,green);
+            border-image-slice: 1;
+            border-radius: 50%;
+            /* animation: run 3s ease-in-out infinite; */
+            
+
+        }
+        .out{
+         border: inherit;
+        background-color: red;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        } 
+        @keyframes run{
+            10%{
+                rotate:90deg;
+            }
+            50%{
+                rotate: 180deg;
+            }
+        }
+    </style>
+    <div class="out">
+
+        <div class="bb"  id="re" onmousemove="dd()"></div>
+    </div>
+</body>
+<script>
+function dd(){
+    document.getElementById("re").style.animation="run 3s ease-in-out";
+}
+</script>
+</html>

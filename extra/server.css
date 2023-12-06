@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(175, 170, 164);
+
+    background-image: linear-gradient(to left, rgb(199, 162, 39) 15%, rgb(18, 132, 207) 125%);
+   
+
+
+}
+
+.status {
+    background-color: transparent;
+    width: 50%;
+    height: 100%;
+    border: 2px solid black;
+    color: white;
+    background-image: linear-gradient(to left, rgb(153, 172, 161) 15%, rgb(106, 174, 219) 125%);
+    box-shadow: 0px 4px 22px white;
+    margin:auto;
+    overflow: hidden;
+}
+
+.status h3 {
+    text-align: center;
+    color: yellow;
+    font-family: 'Roboto', sans-serif;
+}
+
+.uptime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.systm {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 5%;
+}
+
+.greens {
+    background-color: greenyellow;
+}
+
+.oranges {
+    background-color: orange;
+}
+
+.reds {
+    background-color: red;
+}
+
+.container {
+    background-color: rgb(66, 20, 230);
+    margin: auto;
+    width: 25%;
+    height: 100%;
+    border-radius: 10%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    box-shadow: 1px 10px 10px 10px rgba(58, 7, 243, 0.2);
+    box-shadow: 0px 4px 22px white;
+}
+
+.datacenter {
+    color: white;
+    text-align: center;
+    border-radius: 10%;
+    width: 100%;
+    margin: auto;
+    background-color: black;
+
+}
+
+.datacenter h4 {
+    padding: 2%;
+    font-size: larger;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.server {
+    background-color: rgb(27, 26, 27);
+    color: white;
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+
+}
+
+.server:hover {
+    width: 110%;
+    margin-left: -10%;
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    margin-left: 2px;
+}
+
+.green {
+    background-color: green;
+    width: 40px;
+    height: 10px;
+    color: white;
+    border-radius: 25px;
+    position: relative;
+    animation: flash 3ms infinite;
+    margin: 3%;
+
+
+}
+
+.orange {
+    background-color: orange;
+
+    animation: flash2 3ms infinite;
+}
+
+.server p {
+    margin-left: 10%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.white {
+    background-color: white;
+    width: 5px;
+    height: 20px;
+    margin: 3%;
+
+}
+
+.button {
+    margin: auto;
+    width: 10%;
+    padding: 1%;
+    border: 2px solid white;
+    text-align: center;
+    margin-top: 1%;
+    height: 25px;
+    /* background-color: rgb(80, 142, 223); */
+
+    border-radius: 33px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 22px white;
+    display: flex;
+    cursor: pointer;
+    background-image: linear-gradient(rgb(22, 252, 99), rgb(59, 56, 196));
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.button:hover {
+    background-color: rgb(228, 32, 32);
+}
+.footer{
+width: 100%;
+background-color: white;
+height: 50px;
+align-items: center;
+justify-content: center;
+display: flex;
+border-radius: 33.33px;
+margin-top: 1%;
+}
+
+#clock{
+font-size:25px;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+@keyframes flash {
+    10% {
+        background-color: greenyellow;
+    }
+    50% {
+        background-color: greenyellow;
+    }
+    70%{
+        background-color: green;
+    }
+
+}
+
+@keyframes flash2 {
+    10% {
+        background-color: rgb(116, 93, 51);
+    }
+}
+
+@keyframes flash3 {
+    10% {
+        background-color: aqua;
+        box-shadow: 0px 4px 22px white;
+    }
+
+    20% {
+        background-color: beige;
+        box-shadow: 0px 4px 22px rgb(209, 75, 75);
+    }
+
+    30% {
+        background-color: yellow;
+        box-shadow: 0px 4px 22px rgb(36, 209, 114);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .container {
+        width: 85%;
+        margin-top:3%;
+    }
+
+    .status {
+
+        width: 99%;
+        
+    margin-top:2%;
+
+
+    }
+
+    .button {
+        width: 40%;
+        margin-top: 4%;
+        padding: 4%;
+    }
+.footer{
+margin-top:5%;
+height:70px;
+}
+#clock{
+margin-top:3%;
+}
+}

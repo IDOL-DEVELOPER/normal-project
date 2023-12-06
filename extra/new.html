@@ -1,0 +1,22 @@
+<input type="text" id="bill">
+<input type="button" value="check" onclick="check()">
+
+<script>
+    let u,r;
+function check(){
+    u= document.getElementById("bill").value;
+    if(u<=50){
+        r=u*3;
+    }
+    else if(u>50 && u<=150){
+        r=(u-50)*4+150;
+    }
+    else if(u>150 && u<=250){
+        r=(u-150)*5+150+400;
+    }else{
+        r=(u-250)*10+150+500+400;
+    }
+    alert(r);
+}
+
+</script>

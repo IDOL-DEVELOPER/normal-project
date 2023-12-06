@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="validate">
+        <form action="#">
+            <label for="email">Email</label>
+            <input type="text">
+            <label for="number">Number</label>
+            <input type="text" id="numb">
+            <input type="button" value="sumbit" onclick="num()">
+        </form>
+    </div>
+</body>
+<script>
+    function num() {
+        let a = document.getElementById("numb").value;
+
+        if (isNaN(a)) {
+            document.getElementById("validate").value = "Not a number";
+        }
+        else if(a==nulll || a ==""){
+
+        }
+         else {
+            document.getElementById("validate").value = "Number";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@350&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@100&display=swap');
+
+
+
+/* color */
+.bg-lightgray{
+    background-color: rgb(238, 235, 235);
+}
+ li .active:active{
+    color: blue;
+    
+}
+
+h1,h2,h3,h4,h5,h6,span{
+    font-family: 'Roboto', sans-serif;
+    
+}
+p{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+}
+
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    /* width: 100%; */
+    z-index: 100;
+}
+.theme-ds{
+    background-color:#ecf0f1;
+}
+#alert{
+    display: none;
+}
+.st {
+    bottom: 0px;
+    /* width: 100%; */
+    z-index: 99;
+    left: 4%;
+}
+
+.container {}
+
+.card {
+    box-shadow: 5px 5px 15px rgb(115, 113, 113);
+}
+
+hr {
+    margin: 0;
+}
+
+.back-pr {
+    background-image: url(img/apply-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.back-cr {
+    background-image: url(img/meetings-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.back-pr1 {
+    background-image: url(img/facts-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+}
+
+.str {
+    background-color: black;
+    padding: 10px;
+    border-radius: 50%;
+}
+.tip::after:hover
+{
+    content: counter(title);
+    background-color: aqua;
+}
+
+
+.carousel-item img{
+    height: 500px;
+}
+body{
+    background-color: rgb(238, 235, 235);
+
+}
+footer li a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+li{
+    list-style: none;
+}
+.container-fluid{
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+

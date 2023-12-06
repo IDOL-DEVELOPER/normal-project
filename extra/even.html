@@ -1,0 +1,21 @@
+<input type="text" id="number">
+<input type="button" value="check" onclick="check()">
+<p id="num"></p>
+<script>
+
+    function check() {
+        document.getElementById("num").innerHTML = "";
+
+        let c = document.getElementById("number").value;
+        let i = 1;
+        while (i <= c) {
+            if (i % 2 == 0) {
+                document.getElementById("num").innerHTML += "x" + "<br>";
+                
+            } else {
+                document.getElementById("num").innerHTML += i + "<br>";
+            }
+            i++;
+        }
+    }
+</script>

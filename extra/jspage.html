@@ -1,0 +1,21 @@
+<script>
+    function calC() {
+        let a, b, c;
+        a = document.getElementById("one").value;
+        b = document.getElementById("two").value;
+        c = parseInt(a) + parseInt(b);
+        // alert(c);
+        if (a == "" || b == "" || a == null || b == null) {
+            document.getElementById("result").value = "Please enter valid data";
+        }
+        else {
+            document.getElementById("res").innerHTML = c;
+        }
+    }
+</script>
+<input type="number" id="one">
+<input type="number" id="two" onchange="calC()">
+<!-- <input type="text" id="result" onkeyup="calC()"> -->
+<input type="text" id="result" disabled>
+<div id="res">Result: </div>
+<!-- <input type="button" onclick="calC()" value="Result"> -->

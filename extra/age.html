@@ -1,0 +1,13 @@
+<input type="number" id="age">
+<input type="button" value="Check" onclick="check()">
+
+<script>
+    function check(){
+      a=  document.getElementById("age").value;
+        if(a<18){
+            alert("Your Are Not Elegiable For Voting"+"="+a)
+        }else{
+            alert("Your Are Elegiable for Voting "+"="+a)
+        }
+    }
+</script>

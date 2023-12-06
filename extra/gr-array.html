@@ -1,0 +1,15 @@
+<input type="button" value="check" onclick="check()">
+<p id="res"></p>
+<script>
+    function check() {
+        let arr = [-23, -254, -25, -26, -27];
+        let a=arr[0];
+        for (i = 0; i <= 4; i++) {
+            if (arr[i] > a) {
+                a = arr[i];
+            }
+        }
+        document.getElementById("res").innerHTML += a;
+    }
+
+</script>

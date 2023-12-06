@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart with CSS</title>
+    <style>
+        .container {
+            width: 50%;
+            height: 500px;
+            background-color: aquamarine;
+            margin: auto;
+            border: 0.01px solid #9965;
+        }
+
+        .plain {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            position: relative;
+            rotate: 180deg;
+        }
+
+        .chart {
+            background-color: #eeddff;
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            min-height: 10px;
+        }
+
+        #one,
+        #two,
+        #three,
+        #four,
+        #five {
+            bottom: 0;
+            min-height: 10px;
+            max-height: 100%;
+            width: 50px;
+            height: 2%;
+            margin: 0 auto;
+            background-color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        #text-in-chart1,
+        #text-in-chart2,
+        #text-in-chart3,
+        #text-in-chart4,
+        #text-in-chart5 {
+            color: red;
+            rotate: 180deg;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containerds">
+   
+
+        </div>
+        
+        <input type="number" min="2" max="100" id="t1" onchange="doaction('t1','one','text-in-chart1')">
+         <input type="number" min="2" max="100" id="t2" onchange="doaction('t2','two','text-in-chart2')">
+        <input type="number" min="2"  max="100" id="t3" onchange="doaction('t3','three','text-in-chart3')">
+        <input type="number" min="2" max="100" id="t4" onchange="doaction('t4','four','text-in-chart4')">
+        <input type="number" min="2" max="100" id="t5" onchange="doaction('t5','five','text-in-chart5')">
+       
+    </div>
+    <div class="container">
+        <div class="plain">
+            <div class="chart">
+                <div id="five">
+                    <p id="text-in-chart5"></p>
+                </div>
+                <div id="four" style="background-color: #fff;">
+                    <p id="text-in-chart4"></p>
+                </div>
+                <div id="three">
+                    <p id="text-in-chart3"></p>
+                </div>
+                <div id="two">
+                    <p id="text-in-chart2"></p>
+                </div>
+                <div id="one">
+                    <p id="text-in-chart1"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    // let i, j, k;
+    // function action(s) {
+    //     let a;
+    //     switch (s) {
+    //         case "t1":
+    //             i = "t1";
+    //             j = "one";
+    //             k = "text-in-chart1";
+    //             doaction(i, j, k);
+    //             break;
+    //         case "t2":
+    //             i = "t2";
+    //             j = "two";
+    //             k = "text-in-chart2";
+    //             doaction(i, j, k);
+
+    //             break;
+
+    //     }
+    // }
+    function doaction(a, b, c) {
+        a = parseInt(document.getElementById(a).value);
+        document.getElementById(b).style.height = a + "%";
+        document.getElementById(c).innerText = a;
+        
+    }
+    // function action1() {
+    //     let a = parseInt(document.getElementById("t1").value);
+    //     document.getElementById("one").style.height = a + "%";
+    //     document.getElementById("text-in-chart1").innerText = a;
+    // }
+    // function action2() {
+    //     let a = parseInt(document.getElementById("t2").value);
+    //     document.getElementById("two").style.height = a + "%";
+    //     document.getElementById("text-in-chart2").innerText = a;
+
+
+    // }
+    // function action3() {
+    //     let a = parseInt(document.getElementById("t3").value);
+    //     document.getElementById("three").style.height = a + "%";
+    //     document.getElementById("text-in-chart3").innerText = a;
+    // }
+    // function action4() {
+    //     let a = parseInt(document.getElementById("t4").value);
+    //     document.getElementById("four").style.height = a + "%";
+    //     document.getElementById("text-in-chart4").innerText = a;
+
+
+    // }
+    // function action5() {
+    //     let a = parseInt(document.getElementById("t5").value);
+    //     document.getElementById("five").style.height = a + "%";
+    //     document.getElementById("text-in-chart5").innerText = a;
+    // }
+</script>
+
+</html>
